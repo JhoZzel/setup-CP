@@ -9,9 +9,4 @@ int main(int argc, char* argv[]) {
     rnd.setSeed(time(0)); 
     int n = rnd.next(1,N);
     println(n);
-    std::vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        a[i] = rnd.next(1,MAX);
-    }
-    println(a);
 }

@@ -10,10 +10,10 @@ tt=10 # test cases
 for ((i = 1; i <= $tt; i++)); do
     ./Gen > In
     echo "Running on test $i"
-    ./Solution < In > Out1
-    timeout 20 ./a.out < In > Out2
-    ./Checker In Out2 Out1 Verdict
-    ver=$(cat ver)
+    ./Solution < In > OutOK
+    timeout 20 ./a.out < In > Out
+    ./Checker In Out OutOK Verdict
+    ver=$(cat Verdict)
     if [ "$ver" != "Accepted" ]; then
         break
     fi
