@@ -6,13 +6,13 @@ g++ Correct.cpp -o Solution
 g++ a.cpp
 
 ver="Accepted"
-tt=5 # test cases
+tt=10 # test cases
 for ((i = 1; i <= $tt; i++)); do
-    ./Gen > input
+    ./Gen > In
     echo "Running on test $i"
-    ./Solution < input > out1
-    timeout 20 ./a.out < input > out2
-    ./Checker input out2 out1 ver
+    ./Solution < In > Out1
+    timeout 20 ./a.out < In > Out2
+    ./Checker In Out2 Out1 Verdict
     ver=$(cat ver)
     if [ "$ver" != "Accepted" ]; then
         break
