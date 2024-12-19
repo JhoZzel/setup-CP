@@ -6,18 +6,7 @@ call plug#end()
 
 " THEME SETTINGS
 colorscheme onedark  
-set termguicolors             "activa el true color en la terminal
-
-
-" Función para comentar un bloque de código en C++
-function! CommentBlock()
-    normal! I/*
-    normal! $a */
-    normal! 0
-endfunction
-
-" Mapear el atajo de teclado para comentar bloques
-vnoremap <silent> <leader>c :<C-u>call CommentBlock()<CR>
+"set termguicolors             "activa el true color en la terminal
 
 " BASIC SETTINGS
 syntax on
@@ -92,19 +81,4 @@ nnoremap <Tab> :tabnext<CR>
 nnoremap <S-Tab> :tabprev<CR>
 
 " Función para copiar plantilla al crear un nuevo archivo .cpp
-autocmd BufNewFile *.cpp 0r /home/jhozzel/Templates/template.cpp
-
-" Función para comentar un bloque de varias líneas en C++
-function! CommentLine()
-    '<,'>s/^/\/\//g
-endfunction
-
-" Función para descomentar un bloque de varias líneas en C++
-function! UncommentLine()
-    '<,'>s/^\/\/\s\?//g
-endfunction
-
-" Mapear el atajo de teclado para comentar líneas
-vnoremap <silent> <leader>c :<C-u>call CommentLine()<CR>
-" Mapear el atajo de teclado para descomentar líneas
-vnoremap <silent> <leader>u :<C-u>call UncommentLine()<CR>
+"autocmd BufNewFile *.cpp 0r /home/jhozzel/Templates/template.cpp
